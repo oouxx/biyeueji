@@ -15,10 +15,15 @@
         <mahout.version>0.9</mahout.version>
     </properties>
     <dependencies>
-
         <dependency>
             <groupId>org.linlinjava</groupId>
             <artifactId>litemall-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-lang</artifactId>
+                    <groupId>commons-lang</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>

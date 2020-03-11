@@ -43,7 +43,7 @@
 
         <!--数据库连接信息-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/litemall?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;verifyServerCertificate=false&amp;useSSL=false"
+                        connectionURL="jdbc:mysql://47.94.14.86:3306/litemall?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;verifyServerCertificate=false&amp;useSSL=false"
                         userId="litemall"
                         password="litemall123456"/>
 
@@ -184,5 +184,8 @@
             <columnOverride column="pictures" javaType="java.lang.String[]"
                             typeHandler="org.linlinjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
         </table>
+<!--        <table tableName="litemall_hotgoods">-->
+<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"></generatedKey>-->
+<!--        </table>-->
     </context>
 </generatorConfiguration>
