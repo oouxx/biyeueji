@@ -30,7 +30,7 @@ public class LitemallGoodsService {
     public List<LitemallGoods> queryByHot(int offset, int limit) {
         LitemallGoodsExample example = new LitemallGoodsExample();
         example.or().andIsHotEqualTo(true).andIsOnSaleEqualTo(true).andDeletedEqualTo(false);
-        example.setOrderByClause("add_time desc");
+        example.setOrderByClause("update_time desc");
         PageHelper.startPage(offset, limit);
 
         return goodsMapper.selectByExampleSelective(example, columns);

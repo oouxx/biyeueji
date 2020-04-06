@@ -29,15 +29,16 @@ public class MarkHotGoodsService {
     @Resource
     private LitemallFootprintMapper litemallFootprintMapper;
     @Resource
-    private LitemallHotgoodsMapper litemallHotgoodsMapper;
+    private LitemallGoodsMapper litemallGoodsMapper;
 
     public void markHotGoods(){
         Set<Integer> recentFootprintSet = getRecentFootprint(period);
-        LitemallHotgoods record = new LitemallHotgoods();
+        LitemallGoods record = new LitemallGoods();
         for(Integer goodId: recentFootprintSet){
-            record.setGoodsId(goodId);
+            record.setId(goodId);
             record.setIsHot(true);
-            litemallHotgoodsMapper.insertSelective(record);
+            record.setUpdateTime(LocalDateTime.now());
+            litemallGoodsMapper.updateByPrimaryKeySelective(record);
         }
     }
     private Set<Integer> getRecentFootprint(Integer period){
