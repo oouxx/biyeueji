@@ -3,6 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>litemall-recommend</artifactId>
     <version>0.1.0</version>
+    <packaging>pom</packaging>
 
     <parent>
         <groupId>org.linlinjava</groupId>
@@ -54,17 +55,8 @@
                 <!--maven的打包插件-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.0.0</version>
-                    <executions>
-                        <execution>
-                            <id>make-assembly</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>single</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.2.1</version>
                 </plugin>
                 <!--该插件用于将scala代码编译成class文件-->
                 <plugin>
