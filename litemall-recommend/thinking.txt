@@ -1,0 +1,4 @@
+FootPrint(userId: Int, goodsId: Int, timestamp: Int)
+GoodsComment(userId: Int, goodsId: Int, star: int, timestamp: Int)
+
+

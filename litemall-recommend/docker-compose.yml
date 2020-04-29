@@ -1,0 +1,10 @@
+version: '3'
+services:
+  recommender.KafkaStreaming:
+    build:
+
+  recommender.OfflineRecommender:
+    build:
+
+  recommender.StreamingRecommender:
+    build:
