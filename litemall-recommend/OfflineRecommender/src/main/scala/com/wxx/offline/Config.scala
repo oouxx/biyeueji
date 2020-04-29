@@ -6,7 +6,7 @@ object Config {
   )
 
   val mongoConfig = Map(
-    ".uri" -> "mongodb://47.93.97.16:27017/recommender",
+    "uri" -> "mongodb://47.93.97.16:27017/recommender",
     "db" -> "recommender",
     "user" -> "root",
     "password" -> "wxx1512",
