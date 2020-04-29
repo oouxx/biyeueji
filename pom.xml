@@ -26,6 +26,8 @@
         <module>litemall-admin-api</module>
         <module>litemall-all</module>
         <module>litemall-recommend</module>
+        <module>litemall-recommend/KafkaStreaming</module>
+        <module>litemall-recommend/OfflineRecommender</module>
     </modules>
 
     <dependencyManagement>
