@@ -18,23 +18,12 @@
         <module>KafkaStreaming</module>
         <module>OfflineRecommender</module>
         <module>StreamingRecommender</module>
+        <module>Recommender</module>
+<!--        <module>ContentRecommender</module>-->
+<!--        <module>ItemCFRecommender</module>-->
+<!--        <module>StatisticsRecommender</module>-->
     </modules>
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.linlinjava</groupId>-->
-<!--            <artifactId>litemall-core</artifactId>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <artifactId>commons-lang</artifactId>-->
-<!--                    <groupId>commons-lang</groupId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.linlinjava</groupId>-->
-<!--            <artifactId>litemall-db</artifactId>-->
-<!--        </dependency>-->
     </dependencies>
     <build>
         <!--声明并引入子项目共有的插件-->

@@ -63,7 +63,7 @@ object OnlineRecommender {
     val topic = "recommender"
     val kafkaStream = KafkaUtils.createDirectStream[String, String]( ssc,
       LocationStrategies.PreferConsistent,
-      ConsumerStrategies.Subscribe[String, String]( Array(topic,Config.kafkaConfig ))
+      ConsumerStrategies.Subscribe[String, String]( Array(topic),Config.kafkaConfig )
     )
     // 对kafkaStream进行处理，产生评分流，userId|productId|score|timestamp
     val ratingStream = kafkaStream.map{msg=>
