@@ -5,10 +5,9 @@ spring:
     name: recommender
   data:
     mongodb:
-      host: 47.93.97.16
-      uri: mongodb://47.93.97.16:27017
       database: recommender
-#    authentication-database: admin
+      authentication-database: admin
+      uri: http://47.93.97.16:27017
   redis:
     database: 0
     port: 6379
