@@ -222,9 +222,29 @@ export function collectAddOrDelete(data) {
   })
 }
 const CommentList='wx/comment/list'; //评论列表
+export function commentList(query){
+  return request({
+    url: CommentList,
+    method: 'get',
+    params: query
+  })
+}
 const CommentCount='wx/comment/count'; //评论总数
+export function commentCount(query){
+  return request({
+    url: CommentCount,
+    method: 'get',
+    params: query
+  })
+}
 const CommentPost='wx/comment/post'; //发表评论
-
+export function commentPost(data){
+  return request({
+    url: CommentPost,
+    method: 'post',
+    data
+  })
+}
 const TopicList='wx/topic/list'; //专题列表
 export function topicList(query) {
   return request({

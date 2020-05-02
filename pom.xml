@@ -26,7 +26,7 @@
         <module>litemall-admin-api</module>
         <module>litemall-all</module>
         <module>litemall-recommend</module>
-        <module>litemall-recommend/DataLoader</module>
+        <module>litemall-recommender-api</module>
     </modules>
 
     <dependencyManagement>
@@ -54,6 +54,16 @@
             <dependency>
                 <groupId>org.linlinjava</groupId>
                 <artifactId>litemall-all</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.linlinjava</groupId>
+                <artifactId>litemall-recommender-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.linlinjava</groupId>
+                <artifactId>litemall-recommender</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -162,7 +172,8 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
+<!--            optional 为false时依赖不会传递-->
+            <optional>false</optional>
         </dependency>
 
         <!-- 测试模块 -->

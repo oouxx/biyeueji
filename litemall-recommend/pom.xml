@@ -18,7 +18,6 @@
         <module>KafkaStreaming</module>
         <module>OfflineRecommender</module>
         <module>StreamingRecommender</module>
-        <module>Recommender</module>
 <!--        <module>ContentRecommender</module>-->
 <!--        <module>ItemCFRecommender</module>-->
 <!--        <module>StatisticsRecommender</module>-->

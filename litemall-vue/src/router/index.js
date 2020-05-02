@@ -7,11 +7,12 @@ import items from './items';
 import user from './user';
 import order from './order';
 import login from './login';
+import comment from './comment';
 
 Vue.use(Router);
 
 const RouterModel = new Router({
-  routes: [...home, ...items, ...user, ...order, ...login]
+  routes: [...home, ...items, ...user, ...order, ...login, ...comment]
 });
 
 RouterModel.beforeEach((to, from, next) => {

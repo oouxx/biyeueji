@@ -13,7 +13,9 @@ Vue.component(VueCountdown.name, VueCountdown);
 Vue.use(filters);
 
 
-import { Lazyload, Icon, Cell, CellGroup, loading, Button, Toast } from 'vant';
+import { Field, Form, Lazyload, Icon, Cell, CellGroup, loading, Button, Toast } from 'vant';
+Vue.use(Field);
+Vue.use(Form);
 Vue.use(Icon);
 Vue.use(Cell);
 Vue.use(CellGroup);

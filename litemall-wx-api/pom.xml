@@ -34,6 +34,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.linlinjava</groupId>
+            <artifactId>litemall-recommender-api</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-pay</artifactId>
             <exclusions>

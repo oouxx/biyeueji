@@ -1,5 +1,8 @@
 package org.linlinjava.litemall.wx.web;
 
+import com.wxx.recommender.domain.Rating;
+import com.wxx.recommender.service.RatingService;
+import com.wxx.recommender.service.RecommendLogService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -41,6 +44,11 @@ public class WxCommentController {
     private LitemallGoodsService goodsService;
     @Autowired
     private LitemallTopicService topicService;
+
+    @Autowired
+    private RecommendLogService recommendLogService;
+    @Autowired
+    private RatingService ratingService;
 
     private Object validate(LitemallComment comment) {
         String content = comment.getContent();
@@ -95,9 +103,17 @@ public class WxCommentController {
         if (error != null) {
             return error;
         }
-
+        // 埋点日志
+        Rating rating = new Rating(
+                userId,
+                comment.getValueId(),
+                (Double) (comment.getStar()/1.0)
+        );
+        recommendLogService.ratingLogger(rating);
         comment.setUserId(userId);
         commentService.save(comment);
+        // 保存评分数据到mongodb
+        ratingService.saveRating(rating);
         return ResponseUtil.ok(comment);
     }
 
