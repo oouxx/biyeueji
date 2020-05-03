@@ -1,4 +1,3 @@
-<!--评论模块-->
 <template>
   <div class="container">
     <div class="post">
@@ -12,7 +11,6 @@
         />
         <van-field
           v-model="content"
-          type="content"
           name="内容"
           label="内容"
           placeholder="内容"
@@ -35,14 +33,6 @@
       </div>
       <div class="content">{{item.content}}</div>
       <div class="control">
-        <!-- <span class="like" :class="{active: item.isLike}" @click="likeClick(item)">
-          <i class="iconfont icon-like"></i>
-          <span class="like-num">{{item.likeNum > 0 ? item.likeNum + '人赞' : '赞'}}</span>
-        </span>
-        <span class="comment-reply" @click="showCommentInput(item)">
-          <i class="iconfont icon-comment"></i>
-          <span>回复</span>
-        </span> -->
       </div>
     </div>
   </div>
@@ -58,16 +48,25 @@
         star: '',
         content: '',
         comments: [],
+        itemId: this.$route.params.itemId
       }
     },
     computed: {},
     methods: {
         // 提交评论
       commitComment() {
-        console.log("提交评论");
+        commentPost({
+          type: 0,
+          valueId: this.itemId,
+          star: this.star,
+          content: this.content
+        }).then(res =>{
+          console.log(res.data)
+          console.log('提交成功')
+        })
       },
       loadComments() {
-        commentList({valueId: this.$route.params.itemId, type: 0, showType: 0}).then(res => {
+        commentList({valueId: this.itemId, type: 0, showType: 0}).then(res => {
           console.log(res.data.data);
           var list = res.data.data.list
           for(var i = 0; i < list.length; i++ ){

@@ -84,7 +84,7 @@ object OnlineRecommender {
           // 3. 计算每个备选商品的推荐优先级，得到当前用户的实时推荐列表，保存成 Array[(productId, score)]
           val streamRecs = computeProductScore( candidateProducts, userRecentlyRatings, simProcutsMatrixBC.value )
           // 4. 把推荐列表保存到mongodb
-          saveDataToMongoDB( userId, streamRecs )
+          saveDataToMongoDB( userId, etreamRecs )
       }
     }
     // 启动streaming
