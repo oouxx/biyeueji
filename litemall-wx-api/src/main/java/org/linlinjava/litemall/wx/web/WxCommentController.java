@@ -159,10 +159,8 @@ public class WxCommentController {
             commentVo.put("content", comment.getContent());
             commentVo.put("adminContent", comment.getAdminContent());
             commentVo.put("picList", comment.getPicUrls());
-
             UserInfo userInfo = userInfoService.getInfo(comment.getUserId());
             commentVo.put("userInfo", userInfo);
-
             commentVoList.add(commentVo);
         }
         return ResponseUtil.okList(commentVoList, commentList);

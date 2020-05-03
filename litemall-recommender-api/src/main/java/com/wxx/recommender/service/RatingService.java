@@ -1,5 +1,6 @@
 package com.wxx.recommender.service;
 
+import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.wxx.recommender.domain.Rating;
 import com.wxx.recommender.utils.Constant;
@@ -13,7 +14,9 @@ public class RatingService {
     @Autowired
     private MongoTemplate mongoTemplate;
     public void saveRating(Rating rating){
-        MongoCollection<Document> ratingCollection = mongoTemplate.getCollection(Constant.MONGODB_RATING_COLLECTION);
+        // TODO 优化代码 把mongoClient 抽象出来
+        MongoClient mongoClient = new MongoClient("47.93.97.16", Integer.parseInt("27017"));
+        MongoCollection<Document> ratingCollection = mongoClient.getDatabase(Constant.MONGODB_DATABASE).getCollection(Constant.MONGODB_RATING_COLLECTION);
         Document document = new Document();
 
         document.put("userId", rating.getUserId());

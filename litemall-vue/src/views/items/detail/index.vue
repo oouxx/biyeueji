@@ -145,7 +145,7 @@ export default {
     toComment(){
       this.$router.push({
         name: 'comment',
-        params: {id: this.itemId, itemId: this.itemId}
+        params: {id: this.itemId}
       })
     },
     addCollect() {

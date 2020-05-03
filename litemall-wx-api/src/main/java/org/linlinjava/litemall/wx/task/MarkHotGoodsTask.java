@@ -12,17 +12,17 @@ import org.springframework.stereotype.Component;
 public class MarkHotGoodsTask extends Task{
     private static final Logger LOGGER = LoggerFactory.getLogger(MarkHotGoodsTask.class);
 
-    private static final long SECOND = 1000;
+    private static final long MINUTE = 60000;
     @Autowired
     private MarkHotGoodsService markHotGoodsService;
 
     public MarkHotGoodsTask(){
         super("MarkHotGoodsTask" , 60 * 1000);
     }
-    @Scheduled(fixedRate = 3 * SECOND)
+    @Scheduled(fixedRate = 3 * MINUTE)
     @Override
     public void run() {
-        LOGGER.info("当前时间：{}\t\t任务：MarkHotGoodsTask，每3秒执行一次", System.currentTimeMillis());
+        LOGGER.info("当前时间：{}\t\t任务：MarkHotGoodsTask，每3分钟执行一次", System.currentTimeMillis());
         markHotGoodsService.markHotGoods();
     }
 }

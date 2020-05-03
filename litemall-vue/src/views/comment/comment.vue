@@ -48,7 +48,7 @@
         star: '',
         content: '',
         comments: [],
-        itemId: this.$route.params.itemId
+        itemId: 0
       }
     },
     computed: {},
@@ -61,13 +61,11 @@
           star: this.star,
           content: this.content
         }).then(res =>{
-          console.log(res.data)
-          console.log('提交成功')
+          this.loadComments()
         })
       },
       loadComments() {
         commentList({valueId: this.itemId, type: 0, showType: 0}).then(res => {
-          console.log(res.data.data);
           var list = res.data.data.list
           for(var i = 0; i < list.length; i++ ){
             var item = list[i]
@@ -82,6 +80,7 @@
       }
     },
     created() {
+      this.itemId = this.$route.params.id
       this.loadComments();
     }
   }

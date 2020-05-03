@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8085
 spring:
   profiles:
     active: db, core, wx
@@ -7,8 +7,9 @@ spring:
     encoding: UTF-8
   data:
     mongodb:
+      username: wxx
+      password: wxx1512
       database: recommender
-#      authentication-database: admin
       uri: mongodb://47.93.97.16:27017
   redis:
     database: 0
