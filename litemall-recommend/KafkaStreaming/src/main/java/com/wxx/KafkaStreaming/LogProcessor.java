@@ -11,12 +11,6 @@ package com.wxx.KafkaStreaming;/**
 import org.apache.kafka.streams.processor.Processor;
 import org.apache.kafka.streams.processor.ProcessorContext;
 
-/**
- * @ClassName: LogProcessor
- * @Description:
- * @Author: wushengran on 2019/4/28 15:08
- * @Version: 1.0
- */
 public class LogProcessor implements Processor<byte[], byte[]>{
     private ProcessorContext context;
     @Override

@@ -73,5 +73,11 @@ export default [
     name: 'topicList',
     component: () => import('@/views/items/topic-list'),
     props: route => route.query
+  },
+  {
+    path: '/items/offline',
+    name: 'offlineRecs',
+    props: true,
+    component: () => import('@/views/items/offline')
   }
 ];

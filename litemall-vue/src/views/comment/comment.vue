@@ -23,7 +23,7 @@
         </div>
       </van-form>
     </div>
-    <div class="comment" v-for="item in comments" v-bind:key="item">
+    <div class="comment" v-for="(item, index) in comments" v-bind:key="index">
       <div class="info">
         <img class="avatar" :src="item.fromAvatar" width="36" height="36"/>
         <div class="right">
@@ -61,6 +61,8 @@
           star: this.star,
           content: this.content
         }).then(res =>{
+          this.star = ''
+          this.content = ''
           this.loadComments()
         })
       },

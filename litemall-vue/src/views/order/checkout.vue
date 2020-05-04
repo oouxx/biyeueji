@@ -186,9 +186,11 @@ export default {
     },
     init() {
       const {AddressId, CartId, CouponId, UserCouponId} = getLocalStorage('AddressId', 'CartId', 'CouponId', 'UserCouponId');
+      console.log(AddressId + "|" + CartId + "|" + CouponId + "|" + UserCouponId)
 
       cartCheckout({cartId: CartId, addressId: AddressId, couponId: CouponId, userCouponId: UserCouponId, grouponRulesId: 0}).then(res => {
           var data = res.data.data
+          console.log(data)
 
           this.checkedGoodsList = data.checkedGoodsList;
           this.checkedAddress= data.checkedAddress;

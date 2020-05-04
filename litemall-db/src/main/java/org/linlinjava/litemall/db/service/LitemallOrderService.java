@@ -43,6 +43,7 @@ public class LitemallOrderService {
 
     public LitemallOrder findById(Integer userId, Integer orderId) {
         LitemallOrderExample example = new LitemallOrderExample();
+        // orderId
         example.or().andIdEqualTo(orderId).andUserIdEqualTo(userId).andDeletedEqualTo(false);
         return litemallOrderMapper.selectOneByExample(example);
     }

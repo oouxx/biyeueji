@@ -6,19 +6,12 @@ import org.apache.kafka.streams.processor.TopologyBuilder;
 
 import java.util.Properties;
 
-/**
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.processor.TopologyBuilder;
 
 import java.util.Properties;
 
-/**
- * @ClassName: Application
- * @Description:
- * @Author: wushengran on 2019/4/28 14:59
- * @Version: 1.0
- */
 public class Application {
     public static void main(String[] args) {
         String brokers = "47.93.97.16:9092";
@@ -40,7 +33,7 @@ public class Application {
         // 定义拓扑构建器
         TopologyBuilder builder = new TopologyBuilder();
         builder.addSource("SOURCE", from)
-                .addProcessor("PROCESSOR", ()->new com.wxx.KafkaStreaming.LogProcessor(), "SOURCE")
+                .addProcessor("PROCESSOR", LogProcessor::new, "SOURCE")
                 .addSink("SINK", to, "PROCESSOR");
         // 创建kafka stream
         KafkaStreams streams = new KafkaStreams( builder, config );

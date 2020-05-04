@@ -296,7 +296,7 @@ public class WxGoodsController {
 
 	/**
 	 * 商品详情页面“大家都在看”推荐商品
-	 *
+	 * TODO 重构
 	 * @param id, 商品ID
 	 * @return 商品详情页面推荐商品
 	 */

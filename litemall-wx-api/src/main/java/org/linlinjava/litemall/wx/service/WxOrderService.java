@@ -642,7 +642,8 @@ public class WxOrderService {
             fee = actualPrice.multiply(new BigDecimal(100)).intValue();
             orderRequest.setTotalFee(fee);
             orderRequest.setSpbillCreateIp(IpUtil.getIpAddr(request));
-
+            // fake wechat pay
+            // 商户号没有设置好，报错
             result = wxPayService.createOrder(orderRequest);
 
         } catch (Exception e) {

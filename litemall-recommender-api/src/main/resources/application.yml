@@ -10,6 +10,8 @@ spring:
       username: wxx
       password: wxx1512
       database: recommender
+      host: 47.93.97.16
+      port: 27017
       uri: mongodb://47.93.97.16:27017
   redis:
     database: 0
@@ -22,4 +24,17 @@ spring:
         max-idle: 8
         min-idle: 0
     timeout: 0
+  kafka:
+    consumer:
+      bootstrap-servers:
+        - 47.93.97.16:9092
+      group-id: 0
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: 47.93.97.16:9092
+      retries: 0
+
 

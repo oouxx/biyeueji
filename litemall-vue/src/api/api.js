@@ -462,6 +462,15 @@ export function issueList() {
   })
 }
 
+const OfflineRecsList = 'wx/recs/offline'
+export function offlineRecsList(query){
+  return request({
+    url: OfflineRecsList,
+    method: 'get',
+    params: query
+  })
+}
+
 export function getList(api, query) {
   return request({
     url: api,
