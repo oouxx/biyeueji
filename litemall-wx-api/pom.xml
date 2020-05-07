@@ -33,6 +33,7 @@
             <artifactId>litemall-db</artifactId>
         </dependency>
 
+
         <dependency>
             <groupId>org.linlinjava</groupId>
             <artifactId>litemall-recommender-api</artifactId>

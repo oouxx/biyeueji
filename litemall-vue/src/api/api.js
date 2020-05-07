@@ -471,6 +471,16 @@ export function offlineRecsList(query){
   })
 }
 
+
+const StreamRecsList = 'wx/recs/stream'
+export function streamRecsList(query){
+  return request({
+    url: StreamRecsList,
+    method: 'get',
+    params: query
+  })
+}
+
 export function getList(api, query) {
   return request({
     url: api,

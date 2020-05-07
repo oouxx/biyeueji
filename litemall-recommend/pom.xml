@@ -13,14 +13,16 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <mongodb-spark.version>2.4.1</mongodb-spark.version>
+        <casbah.version>3.1.1</casbah.version>
     </properties>
     <modules>
         <module>KafkaStreaming</module>
         <module>OfflineRecommender</module>
         <module>StreamingRecommender</module>
-<!--        <module>ContentRecommender</module>-->
-<!--        <module>ItemCFRecommender</module>-->
-<!--        <module>StatisticsRecommender</module>-->
+        <module>ContentRecommender</module>
+        <module>ItemCFRecommender</module>
+        <module>DataLoader</module>
     </modules>
     <dependencies>
     </dependencies>

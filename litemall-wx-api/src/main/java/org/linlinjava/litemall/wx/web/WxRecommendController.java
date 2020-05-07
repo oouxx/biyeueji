@@ -3,14 +3,12 @@ package org.linlinjava.litemall.wx.web;
 import com.wxx.recommender.domain.Recommendation;
 import com.wxx.recommender.dto.UserRecommendationDTO;
 import com.wxx.recommender.service.RecommenderService;
-import io.swagger.models.auth.In;
 import org.linlinjava.litemall.core.util.ResponseUtil;
 import org.linlinjava.litemall.db.domain.LitemallGoods;
 import org.linlinjava.litemall.db.service.LitemallGoodsService;
 import org.linlinjava.litemall.wx.annotation.LoginUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,10 +24,10 @@ public class WxRecommendController {
     @Autowired
     private LitemallGoodsService litemallGoodsService;
     @GetMapping("offline")
-    public Object offlineRecommend(@LoginUser Integer userId, @NotNull Integer num){
+    public Object offlineRecommend(@LoginUser Integer userId){
 
         List<LitemallGoods> recommendGoodList = new ArrayList<>();
-        List<Recommendation> recommendList = recommenderService.getCollaborativeFilteringRecommendations(new UserRecommendationDTO(userId, num));
+        List<Recommendation> recommendList = recommenderService.getCollaborativeFilteringRecommendations(new UserRecommendationDTO(userId));
         for(Recommendation recommendation: recommendList){
             Integer productId = recommendation.getProductId();
             LitemallGoods litemallGoods = litemallGoodsService.findById(productId);
@@ -37,4 +35,16 @@ public class WxRecommendController {
         }
         return ResponseUtil.okList(recommendGoodList);
     }
+    // 实时推荐
+    @GetMapping(value = "/stream")
+    public Object getStreamProducts(@LoginUser Integer userId) {
+        List<LitemallGoods> litemallGoodsList = new ArrayList<>();
+        List<Recommendation> recommendations = recommenderService.getStreamRecommendation(new UserRecommendationDTO(userId));
+        for(Recommendation recommendation:recommendations){
+            LitemallGoods litemallGoods = litemallGoodsService.findByIdVO(recommendation.getProductId());
+            litemallGoodsList.add(litemallGoods);
+        }
+        return ResponseUtil.ok(litemallGoodsList);
+    }
+
 }

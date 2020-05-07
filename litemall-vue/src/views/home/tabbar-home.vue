@@ -177,7 +177,7 @@
 
     <van-panel>
       <van-card :thumb-link="goDetail(groupGood.id)"
-                v-for="(groupGood ,index) in shopInfos.hotGoodsList"
+                v-for="(groupGood ,index) in offlineRecs"
                 :key="index"
                 :title="groupGood.name"
                 :desc="groupGood.brief"
@@ -198,11 +198,34 @@
       </div>
     </van-panel>
 
+    <van-panel>
+      <van-card :thumb-link="goDetail(groupGood.id)"
+                v-for="(groupGood ,index) in streamRecs"
+                :key="index"
+                :title="groupGood.name"
+                :desc="groupGood.brief"
+                :origin-price="groupGood.counterPrice"
+                :price="groupGood.retailPrice +'.00'"
+                :thumb="groupGood.picUrl"
+                @native-click="goDetail(groupGood.id)">
+        <!-- <div slot="footer">添加日期 {{item.addTime}}</div> -->
+      </van-card>
+      <div slot='header'>
+        <van-cell-group>
+          <van-cell title="实时推荐"
+                    isLink>
+            <router-link to="/items/stream"
+                         class="text-desc">更多实时推荐</router-link>
+          </van-cell>
+        </van-cell-group>
+      </div>
+    </van-panel>
+
   </div>
 </template>
 
 <script>
-import { getHome, goodsCategory, couponReceive } from '@/api/api';
+import {streamRecsList, offlineRecsList, getHome, goodsCategory, couponReceive } from '@/api/api';
 import scrollFixed from '@/mixin/scroll-fixed';
 import _ from 'lodash';
 
@@ -230,6 +253,8 @@ export default {
 
   data() {
     return {
+      streamRecs: [],
+      offlineRecs: [],
       shopInfos: [],
       isLoading: false
     };
@@ -267,6 +292,12 @@ export default {
       getHome().then(res => {
         this.shopInfos = res.data.data;
       });
+      offlineRecsList().then( res =>{
+        this.offlineRecs = res.data.data.list.slice(0,6)
+      })
+      streamRecsList().then(res =>{
+        this.streamRecsList = res.data.data.list.slice(0,6)
+      })
     }
   },
 

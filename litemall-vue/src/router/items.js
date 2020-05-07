@@ -79,5 +79,12 @@ export default [
     name: 'offlineRecs',
     props: true,
     component: () => import('@/views/items/offline')
+  },
+  {
+    path: '/items/stream',
+    name: 'streamRecs',
+    props: true,
+    component: () => import('@/views/items/stream')
   }
+
 ];

@@ -3,19 +3,9 @@ package com.wxx.recommender.dto;
 public class UserRecommendationDTO {
     private int userId;
 
-    private int sum;
 
-    public UserRecommendationDTO(int userId, int sum) {
+    public UserRecommendationDTO(int userId ){
         this.userId = userId;
-        this.sum = sum;
-    }
-
-    public int getSum() {
-        return sum;
-    }
-
-    public void setSum(int sum) {
-        this.sum = sum;
     }
 
     public int getUserId() {

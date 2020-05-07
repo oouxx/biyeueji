@@ -69,6 +69,7 @@
       loadComments() {
         commentList({valueId: this.itemId, type: 0, showType: 0}).then(res => {
           var list = res.data.data.list
+          this.comments = []
           for(var i = 0; i < list.length; i++ ){
             var item = list[i]
             this.comments.push({

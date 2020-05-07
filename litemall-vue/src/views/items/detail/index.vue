@@ -50,6 +50,55 @@
         <p>无详情</p>
       </div>
     </div>
+    <div>
+      <van-panel>
+        <van-card :thumb-link="goDetail(groupGood.id)"
+                  v-for="(groupGood ,index) in relateRecs"
+                  :key="index"
+                  :title="groupGood.name"
+                  :desc="groupGood.brief"
+                  :origin-price="groupGood.counterPrice"
+                  :price="groupGood.retailPrice +'.00'"
+                  :thumb="groupGood.picUrl"
+                  @native-click="goDetail(groupGood.id)">
+          <!-- <div slot="footer">添加日期 {{item.addTime}}</div> -->
+        </van-card>
+        <div slot='header'>
+          <van-cell-group>
+            <van-cell title="推荐"
+                      isLink>
+              <router-link to="/items/relate"
+                          class="text-desc">更多推荐</router-link>
+            </van-cell>
+          </van-cell-group>
+        </div>
+      </van-panel>
+      
+    </div>
+
+    <van-panel>
+      <van-card :thumb-link="goDetail(groupGood.id)"
+                v-for="(groupGood ,index) in itemCFRecs"
+                :key="index"
+                :title="groupGood.name"
+                :desc="groupGood.brief"
+                :origin-price="groupGood.counterPrice"
+                :price="groupGood.retailPrice +'.00'"
+                :thumb="groupGood.picUrl"
+                @native-click="goDetail(groupGood.id)">
+        <!-- <div slot="footer">添加日期 {{item.addTime}}</div> -->
+      </van-card>
+      <div slot='header'>
+        <van-cell-group>
+          <van-cell title="实时推荐"
+                    isLink>
+            <router-link to="/items/stream"
+                         class="text-desc">更多实时推荐</router-link>
+          </van-cell>
+        </van-cell-group>
+      </div>
+    </van-panel>
+
 
     <van-goods-action>
       <van-goods-action-icon @click="toCart" icon="cart-o" :info="(cartInfo > 0) ? cartInfo : ''"/>

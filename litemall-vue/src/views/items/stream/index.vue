@@ -8,7 +8,7 @@
               :finished="finished"
               :immediate-check="false"
               finished-text="没有更多了"
-              @load="getOfflineRecsList">
+              @load="getStreamRecsList">
       <van-card v-for="(item, i) in list"
                 :key="i"
                 :desc="item.brief"
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { offlineRecsList } from '@/api/api';
+import { streamRecsList } from '@/api/api';
 import { Card, List } from 'vant';
 import scrollFixed from '@/mixin/scroll-fixed';
 
@@ -49,11 +49,11 @@ export default {
     init() {
       this.page = 0;
       this.list = [];
-      this.getOfflineRecsList();
+      this.getStreamRecsList();
     },
-    getOfflineRecsList() {
+    getStreamRecsList() {
       this.page++;
-      offlineRecsList().then(res => {
+      streamRecsList().then(res => {
         console.log(res.data.data.list)
         this.list.push(...res.data.data.list);
         this.loading = false;
