@@ -54,7 +54,6 @@ export default {
     getOfflineRecsList() {
       this.page++;
       offlineRecsList().then(res => {
-        console.log(res.data.data.list)
         this.list.push(...res.data.data.list);
         this.loading = false;
         this.finished = true

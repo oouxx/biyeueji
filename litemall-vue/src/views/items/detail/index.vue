@@ -53,7 +53,7 @@
     <div>
       <van-panel>
         <van-card :thumb-link="goDetail(groupGood.id)"
-                  v-for="(groupGood ,index) in relateRecs"
+                  v-for="(groupGood ,index) in itemCFRecs"
                   :key="index"
                   :title="groupGood.name"
                   :desc="groupGood.brief"
@@ -67,38 +67,13 @@
           <van-cell-group>
             <van-cell title="推荐"
                       isLink>
-              <router-link to="/items/relate"
+              <router-link :to="{name: 'itemcf', params: {id: this.itemId}}"
                           class="text-desc">更多推荐</router-link>
             </van-cell>
           </van-cell-group>
         </div>
       </van-panel>
-      
     </div>
-
-    <van-panel>
-      <van-card :thumb-link="goDetail(groupGood.id)"
-                v-for="(groupGood ,index) in itemCFRecs"
-                :key="index"
-                :title="groupGood.name"
-                :desc="groupGood.brief"
-                :origin-price="groupGood.counterPrice"
-                :price="groupGood.retailPrice +'.00'"
-                :thumb="groupGood.picUrl"
-                @native-click="goDetail(groupGood.id)">
-        <!-- <div slot="footer">添加日期 {{item.addTime}}</div> -->
-      </van-card>
-      <div slot='header'>
-        <van-cell-group>
-          <van-cell title="实时推荐"
-                    isLink>
-            <router-link to="/items/stream"
-                         class="text-desc">更多实时推荐</router-link>
-          </van-cell>
-        </van-cell-group>
-      </div>
-    </van-panel>
-
 
     <van-goods-action>
       <van-goods-action-icon @click="toCart" icon="cart-o" :info="(cartInfo > 0) ? cartInfo : ''"/>
@@ -112,9 +87,9 @@
 
 <script>
 
-import { goodsDetail, cartGoodsCount, collectAddOrDelete, cartAdd, cartFastAdd } from '@/api/api';
+import { itemCFRecsList, goodsDetail, cartGoodsCount, collectAddOrDelete, cartAdd, cartFastAdd } from '@/api/api';
 
-import { Sku, Swipe, SwipeItem, GoodsAction, GoodsActionButton, GoodsActionIcon, Popup } from 'vant';
+import { Card, Panel, Sku, Swipe, SwipeItem, GoodsAction, GoodsActionButton, GoodsActionIcon, Popup } from 'vant';
 import { setLocalStorage } from '@/utils/local-storage';
 import popupProps from './popup-props';
 import _ from 'lodash';
@@ -129,6 +104,7 @@ export default {
 
     return {
       isLogin,
+      itemCFRecs: [],
       goods: {
         userHasCollect: 0,
         info: {
@@ -173,6 +149,9 @@ export default {
   },
 
   methods: {
+    goDetail(id) {
+      return `#/items/detail/${id}`;
+    },
     skuClick() {
       this.showSku = true;
     },
@@ -185,6 +164,11 @@ export default {
       cartGoodsCount().then(res => {
         this.cartInfo = res.data.data;
       });
+
+      itemCFRecsList({productId: this.itemId}).then(res => {
+        console.log(res.data.data)
+        this.itemCFRecs = res.data.data.slice(0, 6)
+      })
     },
     toCart() {
       this.$router.push({
@@ -388,6 +372,8 @@ export default {
   },
 
   components: {
+    [Card.name]: Card,
+    [Panel.name]: Panel,
     [Popup.name]: Popup,
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,

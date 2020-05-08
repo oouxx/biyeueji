@@ -85,6 +85,12 @@ export default [
     name: 'streamRecs',
     props: true,
     component: () => import('@/views/items/stream')
+  },
+  {
+    path: '/items/itemcf/:id',
+    name: 'itemcf',
+    props: true,
+    component: () => import('@/views/items/itemcf')
   }
 
 ];

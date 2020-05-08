@@ -471,6 +471,15 @@ export function offlineRecsList(query){
   })
 }
 
+const ItemCFRecsList = 'wx/recs/itemcf'
+export function itemCFRecsList(query){
+  return request({
+    url: ItemCFRecsList,
+    method: 'get',
+    params: query
+  })
+}
+
 
 const StreamRecsList = 'wx/recs/stream'
 export function streamRecsList(query){

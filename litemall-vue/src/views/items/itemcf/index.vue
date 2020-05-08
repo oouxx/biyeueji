@@ -8,7 +8,7 @@
               :finished="finished"
               :immediate-check="false"
               finished-text="没有更多了"
-              @load="getStreamRecsList">
+              @load="getItemCFRecsList">
       <van-card v-for="(item, i) in list"
                 :key="i"
                 :desc="item.brief"
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { streamRecsList } from '@/api/api';
+import { itemCFRecsList } from '@/api/api';
 import { Card, List } from 'vant';
 import scrollFixed from '@/mixin/scroll-fixed';
 
@@ -34,6 +34,7 @@ export default {
   data() {
     return {
       list: [],
+      itemId: 0,
       page: 0,
       limit: 10,
       loading: false,
@@ -49,12 +50,13 @@ export default {
     init() {
       this.page = 0;
       this.list = [];
-      this.getStreamRecsList();
+      this.itemId = this.$route.params.id
+      this.getItemCFRecsList();
     },
-    getStreamRecsList() {
+    getItemCFRecsList() {
       this.page++;
-      streamRecsList().then(res => {
-        this.list.push(...res.data.data.list);
+      itemCFRecsList({productId: this.itemId}).then(res => {
+        this.list.push(...res.data.data);
         this.loading = false;
         this.finished = true
       });

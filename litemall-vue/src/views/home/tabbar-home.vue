@@ -296,7 +296,7 @@ export default {
         this.offlineRecs = res.data.data.list.slice(0,6)
       })
       streamRecsList().then(res =>{
-        this.streamRecsList = res.data.data.list.slice(0,6)
+        this.streamRecs = res.data.data.list.slice(0,6)
       })
     }
   },
