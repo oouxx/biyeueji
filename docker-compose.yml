@@ -1,0 +1,19 @@
+version: '3'
+services:
+  litemall-wx-api:
+    image:
+    ports:
+      - "8761:8761"
+  litemall-admin-api:
+    image:
+    depends_on:
+      - eureka-server
+    deploy:
+      mode: replicated
+      replicas: 2
+  zuul-server:
+    image: zuul-server
+    depends_on:
+      - eureka-server
+    ports:
+      - "9090:9090"

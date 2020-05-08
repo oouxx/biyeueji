@@ -1,0 +1,19 @@
+language: java
+jdk: oraclejdk8
+services: docker
+before_install:
+  - cd litemall-wx-api
+  - chmod +x mvnw
+
+after_success:
+  - docker build -t litemall/litemall-wx-api
+
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master
+
+notifications:
+  email:
+    - wangxinxing961129@gmail.com

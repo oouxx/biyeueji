@@ -26,14 +26,18 @@ public class WxRecommendController {
     @GetMapping("offline")
     public Object offlineRecommend(@LoginUser Integer userId){
 
-        List<LitemallGoods> recommendGoodList = new ArrayList<>();
+        List<LitemallGoods> litemallGoodsList = new ArrayList<>();
         List<Recommendation> recommendList = recommenderService.getCollaborativeFilteringRecommendations(new UserRecommendationDTO(userId));
         for(Recommendation recommendation: recommendList){
             Integer productId = recommendation.getProductId();
             LitemallGoods litemallGoods = litemallGoodsService.findById(productId);
-            recommendGoodList.add(litemallGoods);
+
+            // 在推荐列表里可能存在未售，或者下架商品，所以要进行判空操作
+            if(litemallGoods != null){
+                litemallGoodsList.add(litemallGoods);
+            }
         }
-        return ResponseUtil.okList(recommendGoodList);
+        return ResponseUtil.okList(litemallGoodsList);
     }
     // 实时推荐
     @GetMapping(value = "/stream")
@@ -42,9 +46,25 @@ public class WxRecommendController {
         List<Recommendation> recommendations = recommenderService.getStreamRecommendation(new UserRecommendationDTO(userId));
         for(Recommendation recommendation:recommendations){
             LitemallGoods litemallGoods = litemallGoodsService.findByIdVO(recommendation.getProductId());
-            litemallGoodsList.add(litemallGoods);
+            // 在推荐列表里可能存在未售，或者下架商品，所以要进行判空操作
+            if(litemallGoods != null){
+                litemallGoodsList.add(litemallGoods);
+            }
+        }
+        return ResponseUtil.okList(litemallGoodsList);
+    }
+    // itemCF推荐
+    @GetMapping(value = "/itemcf")
+    public Object getItemCFProducts(@LoginUser Integer userId, @NotNull Integer productId){
+        List<LitemallGoods> litemallGoodsList = new ArrayList<>();
+        List<Recommendation> recommendations = recommenderService.getItemCFRecommendation(productId);
+        for(Recommendation recommendation:recommendations){
+            LitemallGoods litemallGoods = litemallGoodsService.findByIdVO(recommendation.getProductId());
+            // 在推荐列表里可能存在未售，或者下架商品，所以要进行判空操作
+            if(litemallGoods != null){
+                litemallGoodsList.add(litemallGoods);
+            }
         }
         return ResponseUtil.ok(litemallGoodsList);
     }
-
 }

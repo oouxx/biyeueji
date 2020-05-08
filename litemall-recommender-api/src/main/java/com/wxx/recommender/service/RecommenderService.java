@@ -15,17 +15,28 @@ import java.util.List;
 
 @Service
 public class RecommenderService {
+    private static MongoClient mongoClient = new MongoClient("47.93.97.16", Integer.parseInt("27017"));
     // user recs
     public List<Recommendation> getCollaborativeFilteringRecommendations(UserRecommendationDTO request) {
-        MongoClient mongoClient = new MongoClient("47.93.97.16", Integer.parseInt("27017"));
-        MongoCollection<Document> userRecsCollection = mongoClient.getDatabase("recommender").getCollection((Constant.MONGODB_USER_RECS_COLLECTION));
-        return getRecommendations(request, userRecsCollection);
+        MongoCollection<Document> userOfflineRecsCollection = mongoClient.getDatabase("recommender").getCollection((Constant.MONGODB_USER_RECS_COLLECTION));
+        return getRecommendations(request, userOfflineRecsCollection);
     }
     // user steam recs
     public List<Recommendation> getStreamRecommendation(UserRecommendationDTO request){
-        MongoClient mongoClient = new MongoClient("47.93.97.16", Integer.parseInt("27017"));
         MongoCollection<Document> userStreamRecsCollection = mongoClient.getDatabase("recommender").getCollection((Constant.MONGODB_STREAM_RECS_COLLECTION));
         return getRecommendations(request, userStreamRecsCollection);
+    }
+    // itemcf recs
+    public List<Recommendation> getItemCFRecommendation(Integer productId){
+        List<Recommendation> recommendations = new ArrayList<>();
+        MongoCollection<Document> userItemCFRecsCollection = mongoClient.getDatabase("recommender").getCollection((Constant.MONGODB_ITEMCF_COLLECTION));
+        Query query = new Query(Criteria.where("userId").is(productId));
+        Document userRecsDocument = userItemCFRecsCollection.find(new Document("productId", productId)).first();
+        ArrayList<Document> recs = userRecsDocument.get("recs", ArrayList.class);
+        for (Document recDoc : recs) {
+            recommendations.add(new Recommendation(recDoc.getInteger("productId"), recDoc.getDouble("score")));
+        }
+        return recommendations;
     }
     private List<Recommendation> getRecommendations(Document document) {
         List<Recommendation> recommendations = new ArrayList<>();
