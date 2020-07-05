@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: db, core, wx
+    active: db, core, wx, recommender
   messages:
     encoding: UTF-8
 

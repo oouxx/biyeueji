@@ -2,6 +2,7 @@ package org.linlinjava.litemall.wx.web;
 
 import com.github.pagehelper.PageInfo;
 import com.mysql.jdbc.StringUtils;
+import io.swagger.annotations.Api;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.linlinjava.litemall.core.system.SystemConfig;
@@ -10,7 +11,6 @@ import org.linlinjava.litemall.core.validator.Order;
 import org.linlinjava.litemall.core.validator.Sort;
 import org.linlinjava.litemall.db.domain.*;
 import org.linlinjava.litemall.db.service.*;
-import org.linlinjava.litemall.wx.annotation.HotGoodsAnnotation;
 import org.linlinjava.litemall.wx.annotation.LoginUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;

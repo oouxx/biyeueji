@@ -67,4 +67,8 @@ public class WxRecommendController {
         }
         return ResponseUtil.ok(litemallGoodsList);
     }
+    @GetMapping(value = "/content")
+    public Object getContentProducts(@LoginUser Integer userId, @NotNull Integer productId){
+        return ResponseUtil.ok();
+    }
 }

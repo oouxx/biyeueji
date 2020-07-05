@@ -6,14 +6,18 @@ import org.apache.spark.sql.SparkSession
 import org.jblas.DoubleMatrix
 import org.apache.spark.sql.functions.col
 
-case class ProductRating( userId: Int, productId: Int, score: Double, timestamp: Int )
-case class MongoConfig( uri: String, db: String ,user: String, password: String)
+case class ProductRating(userId: Int, productId: Int, score: Double, timestamp: Int)
+
+case class MongoConfig(uri: String, db: String, user: String, password: String)
+
 // 定义标准推荐对象
-case class Recommendation( productId: Int, score: Double )
+case class Recommendation(productId: Int, score: Double)
+
 // 定义用户的推荐列表
-case class UserRecs( userId: Int, recs: Seq[Recommendation] )
+case class UserRecs(userId: Int, recs: Seq[Recommendation])
+
 // 定义商品相似度列表
-case class ProductRecs( productId: Int, recs: Seq[Recommendation] )
+case class ProductRecs(productId: Int, recs: Seq[Recommendation])
 
 object OfflineRecommender {
   // 定义mongodb中存储的表名
@@ -29,7 +33,7 @@ object OfflineRecommender {
     import spark.implicits._
     // 加载数据
     val ratingRDD = spark.read
-        .options(Config.mysqlConfig)
+      .options(Config.mysqlConfig)
       .option("dbtable", "litemall_comment")
       .format("jdbc")
       .load()
@@ -110,6 +114,7 @@ object OfflineRecommender {
       .save()
     spark.stop()
   }
+
   // 计算余弦相似度
   def consinSim(product1: DoubleMatrix, product2: DoubleMatrix): Double = {
     product1.dot(product2) / (product1.norm2() * product2.norm2())
