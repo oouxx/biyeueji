@@ -1,0 +1,6645 @@
+= litemall-wx API
+
+
+[[_overview]]
+== 概览
+litemall小商场API
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : 1.0
+
+
+=== 联系方式
+[%hardbreaks]
+__名字__ : https://github.com/linlinjava/litemall
+
+
+=== 许可信息
+[%hardbreaks]
+__服务条款__ : https://github.com/linlinjava/litemall
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : localhost:8082
+__基础路径__ : /
+
+
+=== 标签
+
+* wx-address-controller : Wx Address Controller
+* wx-aftersale-controller : Wx Aftersale Controller
+* wx-auth-controller : Wx Auth Controller
+* wx-brand-controller : Wx Brand Controller
+* wx-cart-controller : Wx Cart Controller
+* wx-catalog-controller : Wx Catalog Controller
+* wx-collect-controller : Wx Collect Controller
+* wx-comment-controller : Wx Comment Controller
+* wx-coupon-controller : Wx Coupon Controller
+* wx-feedback-controller : Wx Feedback Controller
+* wx-footprint-controller : Wx Footprint Controller
+* wx-goods-controller : Wx Goods Controller
+* wx-groupon-controller : Wx Groupon Controller
+* wx-home-controller : Wx Home Controller
+* wx-index-controller : Wx Index Controller
+* wx-issue-controller : Wx Issue Controller
+* wx-order-controller : Wx Order Controller
+* wx-recommend-controller : Wx Recommend Controller
+* wx-search-controller : Wx Search Controller
+* wx-storage-controller : Wx Storage Controller
+* wx-topic-controller : Wx Topic Controller
+* wx-user-controller : Wx User Controller
+
+
+
+
+[[_paths]]
+== 资源
+
+[[_wx-address-controller_resource]]
+=== Wx-address-controller
+Wx Address Controller
+
+
+[[_deleteusingpost]]
+==== delete
+....
+POST /wx/address/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**address** +
+__必填__|address|<<_litemalladdress,LitemallAddress>>
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/address/delete
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_detailusingget]]
+==== detail
+....
+GET /wx/address/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**id** +
+__可选__|id|integer (int32)
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/address/detail
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget]]
+==== list
+....
+GET /wx/address/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/address/list
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_saveusingpost]]
+==== save
+....
+POST /wx/address/save
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**address** +
+__必填__|address|<<_litemalladdress,LitemallAddress>>
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/address/save
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-aftersale-controller_resource]]
+=== Wx-aftersale-controller
+Wx Aftersale Controller
+
+
+[[_cancelusingpost]]
+==== cancel
+....
+POST /wx/aftersale/cancel
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**aftersale** +
+__必填__|aftersale|<<_litemallaftersale,LitemallAftersale>>
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/aftersale/cancel
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_detailusingget_1]]
+==== detail
+....
+GET /wx/aftersale/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**orderId** +
+__可选__|orderId|integer (int32)
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/aftersale/detail
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_1]]
+==== list
+....
+GET /wx/aftersale/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|**Query**|**status** +
+__必填__|status|integer (int32)|
+|**Body**|**userId** +
+__可选__|userId|integer (int32)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/aftersale/list?status=0
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_submitusingpost]]
+==== submit
+....
+POST /wx/aftersale/submit
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**aftersale** +
+__必填__|aftersale|<<_litemallaftersale,LitemallAftersale>>
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/aftersale/submit
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-auth-controller_resource]]
+=== Wx-auth-controller
+Wx Auth Controller
+
+
+[[_bindphoneusingpost]]
+==== bindPhone
+....
+POST /wx/auth/bindPhone
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/bindPhone
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_captchausingpost]]
+==== captcha
+....
+POST /wx/auth/captcha
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/captcha
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_infousingget]]
+==== info
+....
+GET /wx/auth/info
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/info
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_loginusingpost]]
+==== login
+....
+POST /wx/auth/login
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/login
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_loginbyweixinusingpost]]
+==== loginByWeixin
+....
+POST /wx/auth/login_by_weixin
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**wxLoginInfo** +
+__必填__|wxLoginInfo|<<_wxlogininfo,WxLoginInfo>>
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/login_by_weixin
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+  "code" : "string",
+  "userInfo" : {
+    "avatarUrl" : "string",
+    "city" : "string",
+    "country" : "string",
+    "gender" : 0,
+    "language" : "string",
+    "nickName" : "string",
+    "province" : "string"
+  }
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_logoutusingpost]]
+==== logout
+....
+POST /wx/auth/logout
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/logout
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_profileusingpost]]
+==== profile
+....
+POST /wx/auth/profile
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/profile
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_registercaptchausingpost]]
+==== registerCaptcha
+....
+POST /wx/auth/regCaptcha
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/regCaptcha
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_registerusingpost]]
+==== register
+....
+POST /wx/auth/register
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/register
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_resetusingpost]]
+==== reset
+....
+POST /wx/auth/reset
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/reset
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_resetphoneusingpost]]
+==== resetPhone
+....
+POST /wx/auth/resetPhone
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/auth/resetPhone
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-brand-controller_resource]]
+=== Wx-brand-controller
+Wx Brand Controller
+
+
+[[_detailusingget_2]]
+==== detail
+....
+GET /wx/brand/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**id** +
+__可选__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/brand/detail
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_2]]
+==== list
+....
+GET /wx/brand/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/brand/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-cart-controller_resource]]
+=== Wx-cart-controller
+Wx Cart Controller
+
+
+[[_addusingpost]]
+==== add
+....
+POST /wx/cart/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**cart** +
+__必填__|cart|<<_litemallcart,LitemallCart>>
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/cart/add
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_checkedusingpost]]
+==== checked
+....
+POST /wx/cart/checked
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/cart/checked
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_checkoutusingget]]
+==== checkout
+....
+GET /wx/cart/checkout
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**addressId** +
+__可选__|addressId|integer (int32)
+|**Query**|**cartId** +
+__可选__|cartId|integer (int32)
+|**Query**|**couponId** +
+__可选__|couponId|integer (int32)
+|**Query**|**grouponRulesId** +
+__可选__|grouponRulesId|integer (int32)
+|**Query**|**userCouponId** +
+__可选__|userCouponId|integer (int32)
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/cart/checkout
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_deleteusingpost_1]]
+==== delete
+....
+POST /wx/cart/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/cart/delete
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_fastaddusingpost]]
+==== fastadd
+....
+POST /wx/cart/fastadd
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**cart** +
+__必填__|cart|<<_litemallcart,LitemallCart>>
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/cart/fastadd
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_goodscountusingget]]
+==== goodscount
+....
+GET /wx/cart/goodscount
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/cart/goodscount
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_indexusingget]]
+==== index
+....
+GET /wx/cart/index
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/cart/index
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_updateusingpost]]
+==== update
+....
+POST /wx/cart/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**cart** +
+__必填__|cart|<<_litemallcart,LitemallCart>>
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/cart/update
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-catalog-controller_resource]]
+=== Wx-catalog-controller
+Wx Catalog Controller
+
+
+[[_queryallusingget]]
+==== queryAll
+....
+GET /wx/catalog/all
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/catalog/all
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_currentusingget]]
+==== current
+....
+GET /wx/catalog/current
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**id** +
+__可选__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/catalog/current
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_getfirstcategoryusingget]]
+==== getFirstCategory
+....
+GET /wx/catalog/getfirstcategory
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/catalog/getfirstcategory
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_getsecondcategoryusingget]]
+==== getSecondCategory
+....
+GET /wx/catalog/getsecondcategory
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**id** +
+__可选__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/catalog/getsecondcategory
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_indexusingget_1]]
+==== index
+....
+GET /wx/catalog/index
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__可选__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/catalog/index
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-collect-controller_resource]]
+=== Wx-collect-controller
+Wx Collect Controller
+
+
+[[_addordeleteusingpost]]
+==== addordelete
+....
+POST /wx/collect/addordelete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/collect/addordelete
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_3]]
+==== list
+....
+GET /wx/collect/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|**Body**|**type** +
+__可选__|type|integer (int32)|
+|**Body**|**userId** +
+__可选__|userId|integer (int32)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/collect/list
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-comment-controller_resource]]
+=== Wx-comment-controller
+Wx Comment Controller
+
+
+[[_countusingget]]
+==== count
+....
+GET /wx/comment/count
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**type** +
+__可选__|type|integer (int32)
+|**Body**|**valueId** +
+__可选__|valueId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/comment/count
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_4]]
+==== list
+....
+GET /wx/comment/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Body**|**showType** +
+__可选__|showType|integer (int32)|
+|**Body**|**type** +
+__可选__|type|integer (int32)|
+|**Body**|**valueId** +
+__可选__|valueId|integer (int32)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/comment/list
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_postusingpost]]
+==== post
+....
+POST /wx/comment/post
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**comment** +
+__必填__|comment|<<_litemallcomment,LitemallComment>>
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/comment/post
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-coupon-controller_resource]]
+=== Wx-coupon-controller
+Wx Coupon Controller
+
+
+[[_exchangeusingpost]]
+==== exchange
+....
+POST /wx/coupon/exchange
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/coupon/exchange
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_5]]
+==== list
+....
+GET /wx/coupon/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/coupon/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_mylistusingget]]
+==== mylist
+....
+GET /wx/coupon/mylist
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|**Query**|**status** +
+__可选__|status|integer (int32)|
+|**Body**|**userId** +
+__可选__|userId|integer (int32)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/coupon/mylist
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_receiveusingpost]]
+==== receive
+....
+POST /wx/coupon/receive
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/coupon/receive
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_selectlistusingget]]
+==== selectlist
+....
+GET /wx/coupon/selectlist
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**cartId** +
+__可选__|cartId|integer (int32)
+|**Query**|**grouponRulesId** +
+__可选__|grouponRulesId|integer (int32)
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/coupon/selectlist
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-feedback-controller_resource]]
+=== Wx-feedback-controller
+Wx Feedback Controller
+
+
+[[_submitusingpost_1]]
+==== submit
+....
+POST /wx/feedback/submit
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**feedback** +
+__必填__|feedback|<<_litemallfeedback,LitemallFeedback>>
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/feedback/submit
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-footprint-controller_resource]]
+=== Wx-footprint-controller
+Wx Footprint Controller
+
+
+[[_deleteusingpost_2]]
+==== delete
+....
+POST /wx/footprint/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/footprint/delete
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_6]]
+==== list
+....
+GET /wx/footprint/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Body**|**userId** +
+__可选__|userId|integer (int32)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/footprint/list
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-goods-controller_resource]]
+=== Wx-goods-controller
+Wx Goods Controller
+
+
+[[_categoryusingget]]
+==== category
+....
+GET /wx/goods/category
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**id** +
+__可选__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/goods/category
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_countusingget_1]]
+==== count
+....
+GET /wx/goods/count
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/goods/count
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_detailusingget_3]]
+==== detail
+....
+GET /wx/goods/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**id** +
+__可选__|id|integer (int32)
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/goods/detail
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_7]]
+==== list
+....
+GET /wx/goods/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**brandId** +
+__可选__|brandId|integer (int32)|
+|**Query**|**categoryId** +
+__可选__|categoryId|integer (int32)|
+|**Query**|**isHot** +
+__可选__|isHot|boolean|
+|**Query**|**isNew** +
+__可选__|isNew|boolean|
+|**Query**|**keyword** +
+__可选__|keyword|string|
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|**Body**|**userId** +
+__可选__|userId|integer (int32)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/goods/list
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_relatedusingget]]
+==== related
+....
+GET /wx/goods/related
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**id** +
+__可选__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/goods/related
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-groupon-controller_resource]]
+=== Wx-groupon-controller
+Wx Groupon Controller
+
+
+[[_detailusingget_4]]
+==== detail
+....
+GET /wx/groupon/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**grouponId** +
+__可选__|grouponId|integer (int32)
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/groupon/detail
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_joinusingget]]
+==== join
+....
+GET /wx/groupon/join
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**grouponId** +
+__可选__|grouponId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/groupon/join
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_8]]
+==== list
+....
+GET /wx/groupon/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/groupon/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_myusingget]]
+==== my
+....
+GET /wx/groupon/my
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**showType** +
+__可选__|showType|integer (int32)|`0`
+|**Body**|**userId** +
+__可选__|userId|integer (int32)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/groupon/my
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-home-controller_resource]]
+=== Wx-home-controller
+Wx Home Controller
+
+
+[[_aboutusingget]]
+==== about
+....
+GET /wx/home/about
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/home/about
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_cacheusingget]]
+==== cache
+....
+GET /wx/home/cache
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**key** +
+__可选__|key|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/home/cache
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_indexusingget_2]]
+==== index
+....
+GET /wx/home/index
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/home/index
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-index-controller_resource]]
+=== Wx-index-controller
+Wx Index Controller
+
+
+[[_indexusingpost]]
+==== index
+....
+POST /wx/index/index
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/index/index
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_indexusingget_3]]
+==== index
+....
+GET /wx/index/index
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/index/index
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_indexusingput]]
+==== index
+....
+PUT /wx/index/index
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/index/index
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_indexusingdelete]]
+==== index
+....
+DELETE /wx/index/index
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/index/index
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_indexusingpatch]]
+==== index
+....
+PATCH /wx/index/index
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/index/index
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_indexusinghead]]
+==== index
+....
+HEAD /wx/index/index
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/index/index
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_indexusingoptions]]
+==== index
+....
+OPTIONS /wx/index/index
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/index/index
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-issue-controller_resource]]
+=== Wx-issue-controller
+Wx Issue Controller
+
+
+[[_listusingpost]]
+==== list
+....
+POST /wx/issue/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**question** +
+__可选__|question|string|
+|**Query**|**size** +
+__可选__|size|integer (int32)|`10`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/issue/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_9]]
+==== list
+....
+GET /wx/issue/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**question** +
+__可选__|question|string|
+|**Query**|**size** +
+__可选__|size|integer (int32)|`10`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/issue/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingput]]
+==== list
+....
+PUT /wx/issue/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**question** +
+__可选__|question|string|
+|**Query**|**size** +
+__可选__|size|integer (int32)|`10`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/issue/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingdelete]]
+==== list
+....
+DELETE /wx/issue/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**question** +
+__可选__|question|string|
+|**Query**|**size** +
+__可选__|size|integer (int32)|`10`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/issue/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingpatch]]
+==== list
+....
+PATCH /wx/issue/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**question** +
+__可选__|question|string|
+|**Query**|**size** +
+__可选__|size|integer (int32)|`10`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/issue/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusinghead]]
+==== list
+....
+HEAD /wx/issue/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**question** +
+__可选__|question|string|
+|**Query**|**size** +
+__可选__|size|integer (int32)|`10`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/issue/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingoptions]]
+==== list
+....
+OPTIONS /wx/issue/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**question** +
+__可选__|question|string|
+|**Query**|**size** +
+__可选__|size|integer (int32)|`10`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**204**|No Content|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/issue/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-order-controller_resource]]
+=== Wx-order-controller
+Wx Order Controller
+
+
+[[_cancelusingpost_1]]
+==== cancel
+....
+POST /wx/order/cancel
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/cancel
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_commentusingpost]]
+==== comment
+....
+POST /wx/order/comment
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/comment
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_confirmusingpost]]
+==== confirm
+....
+POST /wx/order/confirm
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/confirm
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_deleteusingpost_3]]
+==== delete
+....
+POST /wx/order/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/delete
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_detailusingget_5]]
+==== detail
+....
+GET /wx/order/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**orderId** +
+__可选__|orderId|integer (int32)
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/detail
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_goodsusingget]]
+==== goods
+....
+GET /wx/order/goods
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**goodsId** +
+__可选__|goodsId|integer (int32)
+|**Body**|**orderId** +
+__可选__|orderId|integer (int32)
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/goods
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_h5payusingpost]]
+==== h5pay
+....
+POST /wx/order/h5pay
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/h5pay
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_10]]
+==== list
+....
+GET /wx/order/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**showType** +
+__可选__|showType|integer (int32)|`0`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|**Body**|**userId** +
+__可选__|userId|integer (int32)|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/list
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_paynotifyusingpost]]
+==== payNotify
+....
+POST /wx/order/pay-notify
+....
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/pay-notify
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_prepayusingpost]]
+==== prepay
+....
+POST /wx/order/prepay
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/prepay
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_refundusingpost]]
+==== refund
+....
+POST /wx/order/refund
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/refund
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_submitusingpost_2]]
+==== submit
+....
+POST /wx/order/submit
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**body** +
+__必填__|body|string
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/order/submit
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-recommend-controller_resource]]
+=== Wx-recommend-controller
+Wx Recommend Controller
+
+
+[[_getcontentproductsusingget]]
+==== getContentProducts
+....
+GET /wx/recs/content
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**productId** +
+__可选__|productId|integer (int32)
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/recs/content
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_getitemcfproductsusingget]]
+==== getItemCFProducts
+....
+GET /wx/recs/itemcf
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**productId** +
+__可选__|productId|integer (int32)
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/recs/itemcf
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_offlinerecommendusingget]]
+==== offlineRecommend
+....
+GET /wx/recs/offline
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/recs/offline
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_getstreamproductsusingget]]
+==== getStreamProducts
+....
+GET /wx/recs/stream
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/recs/stream
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-search-controller_resource]]
+=== Wx-search-controller
+Wx Search Controller
+
+
+[[_clearhistoryusingpost]]
+==== clearhistory
+....
+POST /wx/search/clearhistory
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/search/clearhistory
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_helperusingget]]
+==== helper
+....
+GET /wx/search/helper
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Body**|**keyword** +
+__可选__|keyword|string|
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/search/helper
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_indexusingget_4]]
+==== index
+....
+GET /wx/search/index
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/search/index
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-storage-controller_resource]]
+=== Wx-storage-controller
+Wx Storage Controller
+
+
+[[_downloadusingget]]
+==== download
+....
+GET /wx/storage/download/{key}
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Path**|**key** +
+__必填__|key|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_resource,Resource>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/storage/download/string
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "description" : "string",
+  "file" : {
+    "absolute" : true,
+    "absoluteFile" : {
+      "absolute" : true,
+      "absoluteFile" : "...",
+      "absolutePath" : "string",
+      "canonicalFile" : "...",
+      "canonicalPath" : "string",
+      "directory" : true,
+      "file" : true,
+      "freeSpace" : 0,
+      "hidden" : true,
+      "name" : "string",
+      "parent" : "string",
+      "parentFile" : "...",
+      "path" : "string",
+      "totalSpace" : 0,
+      "usableSpace" : 0
+    },
+    "absolutePath" : "string",
+    "canonicalFile" : "...",
+    "canonicalPath" : "string",
+    "directory" : true,
+    "file" : true,
+    "freeSpace" : 0,
+    "hidden" : true,
+    "name" : "string",
+    "parent" : "string",
+    "parentFile" : "...",
+    "path" : "string",
+    "totalSpace" : 0,
+    "usableSpace" : 0
+  },
+  "filename" : "string",
+  "inputStream" : { },
+  "open" : true,
+  "readable" : true,
+  "uri" : {
+    "absolute" : true,
+    "authority" : "string",
+    "fragment" : "string",
+    "host" : "string",
+    "opaque" : true,
+    "path" : "string",
+    "port" : 0,
+    "query" : "string",
+    "rawAuthority" : "string",
+    "rawFragment" : "string",
+    "rawPath" : "string",
+    "rawQuery" : "string",
+    "rawSchemeSpecificPart" : "string",
+    "rawUserInfo" : "string",
+    "scheme" : "string",
+    "schemeSpecificPart" : "string",
+    "userInfo" : "string"
+  },
+  "url" : {
+    "authority" : "string",
+    "content" : "object",
+    "defaultPort" : 0,
+    "file" : "string",
+    "host" : "string",
+    "path" : "string",
+    "port" : 0,
+    "protocol" : "string",
+    "query" : "string",
+    "ref" : "string",
+    "userInfo" : "string"
+  }
+}
+----
+
+
+[[_fetchusingget]]
+==== fetch
+....
+GET /wx/storage/fetch/{key}
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Path**|**key** +
+__必填__|key|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_resource,Resource>>
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/storage/fetch/string
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "description" : "string",
+  "file" : {
+    "absolute" : true,
+    "absoluteFile" : {
+      "absolute" : true,
+      "absoluteFile" : "...",
+      "absolutePath" : "string",
+      "canonicalFile" : "...",
+      "canonicalPath" : "string",
+      "directory" : true,
+      "file" : true,
+      "freeSpace" : 0,
+      "hidden" : true,
+      "name" : "string",
+      "parent" : "string",
+      "parentFile" : "...",
+      "path" : "string",
+      "totalSpace" : 0,
+      "usableSpace" : 0
+    },
+    "absolutePath" : "string",
+    "canonicalFile" : "...",
+    "canonicalPath" : "string",
+    "directory" : true,
+    "file" : true,
+    "freeSpace" : 0,
+    "hidden" : true,
+    "name" : "string",
+    "parent" : "string",
+    "parentFile" : "...",
+    "path" : "string",
+    "totalSpace" : 0,
+    "usableSpace" : 0
+  },
+  "filename" : "string",
+  "inputStream" : { },
+  "open" : true,
+  "readable" : true,
+  "uri" : {
+    "absolute" : true,
+    "authority" : "string",
+    "fragment" : "string",
+    "host" : "string",
+    "opaque" : true,
+    "path" : "string",
+    "port" : 0,
+    "query" : "string",
+    "rawAuthority" : "string",
+    "rawFragment" : "string",
+    "rawPath" : "string",
+    "rawQuery" : "string",
+    "rawSchemeSpecificPart" : "string",
+    "rawUserInfo" : "string",
+    "scheme" : "string",
+    "schemeSpecificPart" : "string",
+    "userInfo" : "string"
+  },
+  "url" : {
+    "authority" : "string",
+    "content" : "object",
+    "defaultPort" : 0,
+    "file" : "string",
+    "host" : "string",
+    "path" : "string",
+    "port" : 0,
+    "protocol" : "string",
+    "query" : "string",
+    "ref" : "string",
+    "userInfo" : "string"
+  }
+}
+----
+
+
+[[_uploadusingpost]]
+==== upload
+....
+POST /wx/storage/upload
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**FormData**|**file** +
+__必填__|file|file
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `multipart/form-data`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/storage/upload
+----
+
+
+====== 请求 formData
+[source,json]
+----
+"file"
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-topic-controller_resource]]
+=== Wx-topic-controller
+Wx Topic Controller
+
+
+[[_detailusingget_6]]
+==== detail
+....
+GET /wx/topic/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**id** +
+__可选__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/topic/detail
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_listusingget_11]]
+==== list
+....
+GET /wx/topic/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**limit** +
+__可选__|limit|integer (int32)|`10`
+|**Query**|**order** +
+__可选__|order|string|`"desc"`
+|**Query**|**page** +
+__可选__|page|integer (int32)|`1`
+|**Query**|**sort** +
+__可选__|sort|string|`"add_time"`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/topic/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_relatedusingget_1]]
+==== related
+....
+GET /wx/topic/related
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**id** +
+__可选__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/topic/related
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+[[_wx-user-controller_resource]]
+=== Wx-user-controller
+Wx User Controller
+
+
+[[_listusingget_12]]
+==== list
+....
+GET /wx/user/index
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**userId** +
+__可选__|userId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|object
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/wx/user/index
+----
+
+
+====== 请求 body
+[source,json]
+----
+{ }
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+"object"
+----
+
+
+
+
+[[_definitions]]
+== 定义
+
+[[_file]]
+=== File
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**absolute** +
+__可选__|**样例** : `true`|boolean
+|**absoluteFile** +
+__可选__|**样例** : <<_file>>|<<_file,File>>
+|**absolutePath** +
+__可选__|**样例** : `"string"`|string
+|**canonicalFile** +
+__可选__|**样例** : <<_file>>|<<_file,File>>
+|**canonicalPath** +
+__可选__|**样例** : `"string"`|string
+|**directory** +
+__可选__|**样例** : `true`|boolean
+|**file** +
+__可选__|**样例** : `true`|boolean
+|**freeSpace** +
+__可选__|**样例** : `0`|integer (int64)
+|**hidden** +
+__可选__|**样例** : `true`|boolean
+|**name** +
+__可选__|**样例** : `"string"`|string
+|**parent** +
+__可选__|**样例** : `"string"`|string
+|**parentFile** +
+__可选__|**样例** : <<_file>>|<<_file,File>>
+|**path** +
+__可选__|**样例** : `"string"`|string
+|**totalSpace** +
+__可选__|**样例** : `0`|integer (int64)
+|**usableSpace** +
+__可选__|**样例** : `0`|integer (int64)
+|===
+
+
+[[_inputstream]]
+=== InputStream
+__类型__ : object
+
+
+[[_litemalladdress]]
+=== LitemallAddress
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**addTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**addressDetail** +
+__可选__|**样例** : `"string"`|string
+|**areaCode** +
+__可选__|**样例** : `"string"`|string
+|**city** +
+__可选__|**样例** : `"string"`|string
+|**county** +
+__可选__|**样例** : `"string"`|string
+|**deleted** +
+__可选__|**样例** : `true`|boolean
+|**id** +
+__可选__|**样例** : `0`|integer (int32)
+|**isDefault** +
+__可选__|**样例** : `true`|boolean
+|**name** +
+__可选__|**样例** : `"string"`|string
+|**postalCode** +
+__可选__|**样例** : `"string"`|string
+|**province** +
+__可选__|**样例** : `"string"`|string
+|**tel** +
+__可选__|**样例** : `"string"`|string
+|**updateTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**userId** +
+__可选__|**样例** : `0`|integer (int32)
+|===
+
+
+[[_litemallaftersale]]
+=== LitemallAftersale
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**addTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**aftersaleSn** +
+__可选__|**样例** : `"string"`|string
+|**amount** +
+__可选__|**样例** : `0.0`|number
+|**comment** +
+__可选__|**样例** : `"string"`|string
+|**deleted** +
+__可选__|**样例** : `true`|boolean
+|**handleTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**id** +
+__可选__|**样例** : `0`|integer (int32)
+|**orderId** +
+__可选__|**样例** : `0`|integer (int32)
+|**pictures** +
+__可选__|**样例** : `[ "string" ]`|< string > array
+|**reason** +
+__可选__|**样例** : `"string"`|string
+|**status** +
+__可选__|**样例** : `0`|integer (int32)
+|**type** +
+__可选__|**样例** : `0`|integer (int32)
+|**updateTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**userId** +
+__可选__|**样例** : `0`|integer (int32)
+|===
+
+
+[[_litemallcart]]
+=== LitemallCart
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**addTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**checked** +
+__可选__|**样例** : `true`|boolean
+|**deleted** +
+__可选__|**样例** : `true`|boolean
+|**goodsId** +
+__可选__|**样例** : `0`|integer (int32)
+|**goodsName** +
+__可选__|**样例** : `"string"`|string
+|**goodsSn** +
+__可选__|**样例** : `"string"`|string
+|**id** +
+__可选__|**样例** : `0`|integer (int32)
+|**number** +
+__可选__|**样例** : `0`|integer (int32)
+|**picUrl** +
+__可选__|**样例** : `"string"`|string
+|**price** +
+__可选__|**样例** : `0.0`|number
+|**productId** +
+__可选__|**样例** : `0`|integer (int32)
+|**specifications** +
+__可选__|**样例** : `[ "string" ]`|< string > array
+|**updateTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**userId** +
+__可选__|**样例** : `0`|integer (int32)
+|===
+
+
+[[_litemallcomment]]
+=== LitemallComment
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**addTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**adminContent** +
+__可选__|**样例** : `"string"`|string
+|**content** +
+__可选__|**样例** : `"string"`|string
+|**deleted** +
+__可选__|**样例** : `true`|boolean
+|**hasPicture** +
+__可选__|**样例** : `true`|boolean
+|**id** +
+__可选__|**样例** : `0`|integer (int32)
+|**picUrls** +
+__可选__|**样例** : `[ "string" ]`|< string > array
+|**star** +
+__可选__|**样例** : `0`|integer (int32)
+|**type** +
+__可选__|**最小值** : `-128` +
+**最大值** : `127` +
+**样例** : `0`|integer (int32)
+|**updateTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**userId** +
+__可选__|**样例** : `0`|integer (int32)
+|**valueId** +
+__可选__|**样例** : `0`|integer (int32)
+|===
+
+
+[[_litemallfeedback]]
+=== LitemallFeedback
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**addTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**content** +
+__可选__|**样例** : `"string"`|string
+|**deleted** +
+__可选__|**样例** : `true`|boolean
+|**feedType** +
+__可选__|**样例** : `"string"`|string
+|**hasPicture** +
+__可选__|**样例** : `true`|boolean
+|**id** +
+__可选__|**样例** : `0`|integer (int32)
+|**mobile** +
+__可选__|**样例** : `"string"`|string
+|**picUrls** +
+__可选__|**样例** : `[ "string" ]`|< string > array
+|**status** +
+__可选__|**样例** : `0`|integer (int32)
+|**updateTime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**userId** +
+__可选__|**样例** : `0`|integer (int32)
+|**username** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_resource]]
+=== Resource
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**description** +
+__可选__|**样例** : `"string"`|string
+|**file** +
+__可选__|**样例** : <<_file>>|<<_file,File>>
+|**filename** +
+__可选__|**样例** : `"string"`|string
+|**inputStream** +
+__可选__|**样例** : <<_inputstream>>|<<_inputstream,InputStream>>
+|**open** +
+__可选__|**样例** : `true`|boolean
+|**readable** +
+__可选__|**样例** : `true`|boolean
+|**uri** +
+__可选__|**样例** : <<_uri>>|<<_uri,URI>>
+|**url** +
+__可选__|**样例** : <<_url>>|<<_url,URL>>
+|===
+
+
+[[_uri]]
+=== URI
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**absolute** +
+__可选__|**样例** : `true`|boolean
+|**authority** +
+__可选__|**样例** : `"string"`|string
+|**fragment** +
+__可选__|**样例** : `"string"`|string
+|**host** +
+__可选__|**样例** : `"string"`|string
+|**opaque** +
+__可选__|**样例** : `true`|boolean
+|**path** +
+__可选__|**样例** : `"string"`|string
+|**port** +
+__可选__|**样例** : `0`|integer (int32)
+|**query** +
+__可选__|**样例** : `"string"`|string
+|**rawAuthority** +
+__可选__|**样例** : `"string"`|string
+|**rawFragment** +
+__可选__|**样例** : `"string"`|string
+|**rawPath** +
+__可选__|**样例** : `"string"`|string
+|**rawQuery** +
+__可选__|**样例** : `"string"`|string
+|**rawSchemeSpecificPart** +
+__可选__|**样例** : `"string"`|string
+|**rawUserInfo** +
+__可选__|**样例** : `"string"`|string
+|**scheme** +
+__可选__|**样例** : `"string"`|string
+|**schemeSpecificPart** +
+__可选__|**样例** : `"string"`|string
+|**userInfo** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_url]]
+=== URL
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**authority** +
+__可选__|**样例** : `"string"`|string
+|**content** +
+__可选__|**样例** : `"object"`|object
+|**defaultPort** +
+__可选__|**样例** : `0`|integer (int32)
+|**file** +
+__可选__|**样例** : `"string"`|string
+|**host** +
+__可选__|**样例** : `"string"`|string
+|**path** +
+__可选__|**样例** : `"string"`|string
+|**port** +
+__可选__|**样例** : `0`|integer (int32)
+|**protocol** +
+__可选__|**样例** : `"string"`|string
+|**query** +
+__可选__|**样例** : `"string"`|string
+|**ref** +
+__可选__|**样例** : `"string"`|string
+|**userInfo** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_userinfo]]
+=== UserInfo
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**avatarUrl** +
+__可选__|**样例** : `"string"`|string
+|**city** +
+__可选__|**样例** : `"string"`|string
+|**country** +
+__可选__|**样例** : `"string"`|string
+|**gender** +
+__可选__|**最小值** : `-128` +
+**最大值** : `127` +
+**样例** : `0`|integer (int32)
+|**language** +
+__可选__|**样例** : `"string"`|string
+|**nickName** +
+__可选__|**样例** : `"string"`|string
+|**province** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_wxlogininfo]]
+=== WxLoginInfo
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|**样例** : `"string"`|string
+|**userInfo** +
+__可选__|**样例** : <<_userinfo>>|<<_userinfo,UserInfo>>
+|===
+
+
+
+
+
